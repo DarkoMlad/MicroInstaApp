@@ -1,0 +1,71 @@
+<div>
+  <div class="card p-2 main-photos-card" *ngIf="photos$ | async as photo">
+    <div class="card-header mb-1">
+      <div class="row">
+        <div class="col-2">
+          <div></div>
+        </div>
+
+        <div class="col-8 text-center">
+          {{ !displayModal ? pageTitle : "Please edit this photo" }}
+        </div>
+        <div class="col-2 text-right">
+          <button
+            class="fa fa-times btn btn-outline-danger"
+            (click)="onSelected([0, 0]); closeEditModal_Buttons()"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- fa fa-edit btn btn-outline-primary -->
+
+    <div class="card-body">
+      <div class="container-fluid">
+        <div class="text-center">
+          <img
+            style="width: 350px; height: 300px"
+            [src]="photo.url"
+            class="img-fluid rounded"
+          />
+        </div>
+        <div style="padding-top: 50px">
+          <div *ngIf="!displayModal">
+            <div>AlbumId: {{ photo.albumId }}</div>
+            <div>PhotoId: {{ photo.id }}</div>
+            <div>Title: {{ photo.title }}</div>
+            <div>Thumbnail Url: {{ photo.thumbnailUrl }}</div>
+            <div>Url: {{ photo.url }}</div>
+          </div>
+        </div>
+        <div *ngIf="displayModal">
+          <mi-edit-photo></mi-edit-photo>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div *ngIf="!displayButtons">
+        <button class="btn btn-outline-primary" (click)="moreOptions()">
+          Options
+        </button>
+      </div>
+      <div *ngIf="displayButtons">
+        <button
+          class="btn btn-outline-primary mx-3"
+          (click)="deletePhotoMethod(photo.id)"
+        >
+          Delete
+        </button>
+        <button class="btn btn-outline-primary mx-3" (click)="isEditing()">
+          Edit
+        </button>
+        <button
+          class="btn btn-outline-primary mx-3"
+          (click)="closeEditModal_Buttons()"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

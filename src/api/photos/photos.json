@@ -1,0 +1,37 @@
+[
+  {
+    "albumId": 1,
+    "id": 1,
+    "title": "first coffee",
+    "url": "assets/images/coffee1.png",
+    "thumbnailUrl": "assets/images/thumb_coffee1.png"
+  },
+  {
+    "albumId": 1,
+    "id": 2,
+    "title": "second coffee",
+    "url": "assets/images/coffee2.png",
+    "thumbnailUrl": "assets/images/thumb_coffee2.png"
+  },
+  {
+    "albumId": 2,
+    "id": 1,
+    "title": "third coffee",
+    "url": "assets/images/coffee3.png",
+    "thumbnailUrl": "assets/images/thumb_coffee3.png"
+  },
+  {
+    "albumId": 2,
+    "id": 2,
+    "title": "fourth coffee",
+    "url": "assets/images/coffee4.png",
+    "thumbnailUrl": "assets/images/thumb_coffee4.png"
+  },
+  {
+    "albumId": 1,
+    "id": 5,
+    "title": "fifth coffee",
+    "url": "assets/images/coffee5.png",
+    "thumbnailUrl": "assets/images/thumb_coffee5.png"
+  }
+]

@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+body {
+  font-family: cursive;
+}
+.navclass {
+  text-transform: uppercase;
+}
+.navclass a:hover {
+  background-color: orange;
+}
+.main-photos-card {
+  height: 750px;
+}
+
+.testHover {
+  text-decoration: none;
+}
+
+/* .testHover :hover {
+  background-color: rgba(0, 0, 0, 0.1);
+} */

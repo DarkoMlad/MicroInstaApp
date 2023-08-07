@@ -1,0 +1,91 @@
+<form #form="ngForm">
+  <div *ngIf="photos$ | async as photo">
+    <div>Album Id: {{ photo.albumId }}</div>
+    <div>Photo Id: {{ photo.id }}</div>
+    <div class="row align-items-center">
+      <div class="row">
+        <div class="col-3"></div>
+
+        <div class="col-1">
+          <label for="title" class="col-form-label">Title:</label>
+        </div>
+        <div class="col-5">
+          <input
+            type="text"
+            id="title"
+            name="title"
+            class="form-control"
+            placeholder="Insert a Title"
+            required
+            maxlength="50"
+            [class.field-error]="
+              form.submitted && formGroup.controls.title.invalid
+            "
+            [formControl]="formGroup.controls.title"
+          />
+          <div
+            [hidden]="!form.submitted || formGroup.controls.title.valid"
+            class="alert alert-danger"
+          >
+            Please enter a valid Title...
+          </div>
+        </div>
+        <div class="col-3">
+          <button
+            class="btn btn-outline-primary mx-2"
+            type="submit"
+            (click)="onSubmit(form, photo)"
+          >
+            Save
+          </button>
+        </div>
+        <!-- <div
+          [hidden]="!form.submitted || titleField.valid"
+          class="alert alert-danger"
+        >
+          Please enter a valid Title...
+        </div> -->
+      </div>
+    </div>
+
+    <div>Thumbnail Url: {{ photo.thumbnailUrl }}</div>
+    <div>Url: {{ photo.url }}</div>
+    <!-- <div class="m-3">
+      <button
+        class="btn btn-outline-primary"
+        type="submit"
+        (click)="onSubmit(photo)"
+      >
+        Save Changes
+      </button>
+    </div> -->
+  </div>
+</form>
+
+<!-- 
+
+          <button
+            class="btn btn-outline-primary mx-2"
+            type="submit"
+            (click)="onSubmit(form, photo)"
+          >
+            Save
+          </button>
+          <button
+            class="btn btn-outline-primary"
+            type="submit"
+            [(ngModel)]="photo.title"
+          >
+            Discard
+          </button>
+
+
+
+ -->
+
+<!-- 
+
+            (click)="onSubmit(form, photo)"
+
+
+  -->
